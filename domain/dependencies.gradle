@@ -1,0 +1,7 @@
+ext {
+
+    kotlinDeps = [
+            kotlinPlugin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
+    ]
+
+}

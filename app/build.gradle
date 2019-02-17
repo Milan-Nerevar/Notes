@@ -56,5 +56,7 @@ dependencyUpdates {
 
 dependencies {
     implementation kotlinDeps.values()
+    implementation diDeps.values()
+    implementation androidxDeps.values()
     implementation restDeps.values()
 }

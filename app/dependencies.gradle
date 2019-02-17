@@ -1,13 +1,20 @@
 ext {
 
-    androidXVersion                 =   '1.0.0'
-    kotlinCoroutinesVersion         =   '1.0.1'
+    androidXVersion                 =   '1.0.1'
+    coroutinesVersion               =   '1.1.1'
+    retrofitVersion                 =   '2.5.0'
 
     kotlinDeps = [
             kotlinPlugin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
-            coroutines          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinCoroutinesVersion}",
-            androidCoroutines   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlinCoroutinesVersion}",
+            coroutines          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}",
+            androidCoroutines   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutinesVersion}",
             ktx                 : "androidx.core:core-ktx:${androidXVersion}"
+    ]
+
+    restDeps = [
+            retrofit            : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            converter           : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            coroutinesAdapter   : 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
     ]
 
 }

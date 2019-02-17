@@ -25,4 +25,14 @@ ext {
             interceptor         : 'com.squareup.okhttp3:logging-interceptor:3.13.1'
     ]
 
+    androidxDeps = [
+            activity            : "androidx.appcompat:appcompat:1.0.2",
+            recyclerView        : "androidx.recyclerview:recyclerview:1.0.0"
+    ]
+
+    navigation = [
+            fragment            : "android.arch.navigation:navigation-fragment-ktx:$navigationVersion",
+            ui                  : "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+    ]
+
 }

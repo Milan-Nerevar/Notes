@@ -1,0 +1,13 @@
+ext {
+
+    androidXVersion                 =   '1.0.0'
+    kotlinCoroutinesVersion         =   '1.0.1'
+
+    kotlinDeps = [
+            kotlinPlugin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            coroutines          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinCoroutinesVersion}",
+            androidCoroutines   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kotlinCoroutinesVersion}",
+            ktx                 : "androidx.core:core-ktx:${androidXVersion}"
+    ]
+
+}

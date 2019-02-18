@@ -8,13 +8,20 @@ apply from: 'dependencies.gradle'
 android {
     compileSdkVersion 28
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.nerevar.notes"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -55,8 +62,13 @@ dependencyUpdates {
 }
 
 dependencies {
+    implementation localDeps.values()
+
     implementation kotlinDeps.values()
     implementation diDeps.values()
     implementation androidxDeps.values()
+    implementation navigationDeps.values()
     implementation restDeps.values()
+    implementation liveData.values()
+    implementation rxDeps.values()
 }

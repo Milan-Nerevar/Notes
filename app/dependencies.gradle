@@ -2,8 +2,12 @@ ext {
 
     coroutinesVersion               =   '1.1.1'
     retrofitVersion                 =   '2.5.0'
-    navigationVersion               =   '1.0.0'
+    navigationVersion               =   '1.0.0-beta02'
     koinVersion                     =   '1.0.2'
+
+    localDeps = [
+            modules             : project(':domain')
+    ]
 
     kotlinDeps = [
             kotlinPlugin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
@@ -27,12 +31,27 @@ ext {
 
     androidxDeps = [
             activity            : "androidx.appcompat:appcompat:1.0.2",
-            recyclerView        : "androidx.recyclerview:recyclerview:1.0.0"
+            recyclerView        : "androidx.recyclerview:recyclerview:1.0.0",
+            cardView            : "androidx.cardview:cardview:1.0.0",
+
     ]
 
-    navigation = [
-            fragment            : "android.arch.navigation:navigation-fragment-ktx:$navigationVersion",
-            ui                  : "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+    navigationDeps = [
+            fragment            : "android.arch.navigation:navigation-fragment:$navigationVersion",
+            fragmentKtx         : "android.arch.navigation:navigation-fragment-ktx:$navigationVersion",
+            ui                  : "android.arch.navigation:navigation-ui:$navigationVersion",
+            uiKtx               : "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+    ]
+
+    liveData = [
+            event               : "com.github.hadilq.liveevent:liveevent:1.0.0"
+    ]
+
+    rxDeps = [
+            android             : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
+            rx                  : 'io.reactivex.rxjava2:rxjava:2.2.6',
+            rxbinding           : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+            rxBindingKotlin     : "com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0"
     ]
 
 }

@@ -1,4 +1,4 @@
-package com.nerevar.notes.core
+package com.nerevar.notes.core.api
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object RestClient {
 
-    val client: OkHttpClient by lazy {
+    val defaultBuilder: OkHttpClient.Builder by lazy {
         OkHttpClient.Builder()
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
@@ -17,10 +17,9 @@ object RestClient {
                 HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.BASIC)
             )
-            .build()
     }
 
-    inline fun <reified T> createService(url: String): T = Retrofit.Builder()
+    inline fun <reified T> createService(client: OkHttpClient, url: String): T = Retrofit.Builder()
         .baseUrl(url)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())

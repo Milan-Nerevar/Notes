@@ -45,7 +45,7 @@ object NotesContract {
     val module = module {
 
         factory<NotesEndpoint> { RestClient.createService(get(), Config.BASE_URL) }
-        factory { NotesModel(get()) }
+        factory<Model> { NotesModel(get()) }
         viewModel { NotesViewModel(get()) }
     }
 

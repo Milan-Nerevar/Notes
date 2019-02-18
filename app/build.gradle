@@ -71,4 +71,6 @@ dependencies {
     implementation restDeps.values()
     implementation liveData.values()
     implementation rxDeps.values()
+
+    testImplementation testingDeps.values()
 }

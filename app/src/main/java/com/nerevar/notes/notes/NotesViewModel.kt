@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class NotesViewModel(model: NotesModel) : BaseViewModel<NotesModel>(model), NotesContract.VM {
+class NotesViewModel(model: NotesContract.Model) : BaseViewModel<NotesContract.Model>(model), NotesContract.VM {
 
     private val _loading = MutableLiveData<Boolean>().apply { value = false }
     private val _navigateToNoteDetail = LiveEvent<Long>()

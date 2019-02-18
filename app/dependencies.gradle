@@ -5,6 +5,10 @@ ext {
     navigationVersion               =   '1.0.0-beta02'
     koinVersion                     =   '1.0.2'
 
+    jUnitVersion                    =   '4.12'
+    mockitoVersion                  =   '2.24.5'
+    kotlinMockitoVersion            =   '1.6.0'
+
     localDeps = [
             modules             : project(':domain')
     ]
@@ -50,8 +54,17 @@ ext {
     rxDeps = [
             android             : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
             rx                  : 'io.reactivex.rxjava2:rxjava:2.2.6',
-            rxbinding           : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
-            rxBindingKotlin     : "com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0"
+            rxbinding           : "com.jakewharton.rxbinding2:rxbinding:2.2.0",
+            rxBindingKotlin     : "com.jakewharton.rxbinding2:rxbinding-kotlin:2.2.0"
+    ]
+
+    testingDeps = [
+            junit                   :       "junit:junit:${jUnitVersion}",
+            mockito                 :       "org.mockito:mockito-core:${mockitoVersion}",
+            kotlinMockito           :       "com.nhaarman:mockito-kotlin:${kotlinMockitoVersion}",
+            arch                    :       "android.arch.core:core-testing:1.1.1",
+            coroutineTest           :       "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.1.1"
+
     ]
 
 }
